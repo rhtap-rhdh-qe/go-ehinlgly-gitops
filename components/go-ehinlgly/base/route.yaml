@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-ehinlgly
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-ehinlgly 
+  name: go-ehinlgly
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-ehinlgly
+    weight: 100 
